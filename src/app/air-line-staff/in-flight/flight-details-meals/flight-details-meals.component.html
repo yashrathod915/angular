@@ -1,0 +1,109 @@
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Flight Details">
+        <mat-card class="flight-card">
+            <div class="col-md-9">
+                <div class="details">
+              <b> <h4 class="card-title" style="text-transform: uppercase;font-size:27px;">{{flight.flightName}}</h4></b>
+                <!-- <div class="badge badge-secondary" style="margin-bottom: 10px;">{{flight.flightName}}</div> -->
+               
+               <mat-icon class="mat-icon">flight_takeoff</mat-icon> <div class="place">{{flight.departurePlace}}</div>
+                <mat-icon class=mat-icon>flight_land</mat-icon><div class="place">{{flight.arrivalPlace}}</div>
+               <mat-icon>alarm_on</mat-icon> <div class="time">{{flight.departureTime}}</div>
+                <mat-icon>alarm_off</mat-icon><div class="time">{{flight.arrivalTime}}</div>
+            </div>
+            </div>
+        </mat-card>
+        <mat-card class="colourcode"> 
+            <div class="orange-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Special Meals</div>
+            <div class="grey-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Normal Meals</div>
+        </mat-card>
+
+        <div class="plane">
+
+            <div class="exit exit--front fuselage">
+          
+            </div>
+            <ol class="cabin fuselage">
+              <li *ngFor="let seats of rows" class="row row--1">
+                <ol class="seats" type="A">
+                  <li *ngFor="let seat of seats" class="seat" >
+                    <input type="checkbox" [checked]="seatsLayout?.booked?.includes(seat)" [id]="seat" />
+                    <label [for]="seat">{{seat}}</label>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+            <div class="exit exit--back fuselage">
+          
+            </div>
+          </div>
+        <!-- <mat-card class="card-seat">
+        <div class="grid">
+            <mat-grid-list cols="5" rowHeight="30px" gutterSize="70px">
+                <mat-grid-tile *ngFor="let s of specialMeals;let i = index" [colspan]=1 [rowspan]=1
+                    [style.background]="s.colour">
+                    {{s.seatNo}}
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        </mat-card> -->
+    </mat-tab>
+    <mat-tab label="Passengers Details">
+        <mat-card class="card">
+        <mat-table [dataSource]="dataSource">
+
+            <!--- Note that these columns can be defined in any order.
+    The actual rendered columns are set as a property on the row definition" -->
+
+            <ng-container matColumnDef="passengerId">
+                <mat-header-cell *matHeaderCellDef>Passenger Id</mat-header-cell>
+
+                <mat-cell *matCellDef="let element"> {{element.passengerId}} </mat-cell>
+            </ng-container>
+            <!-- Position Column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="seatNo">
+                <mat-header-cell *matHeaderCellDef> Seat No </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.seatNo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="ancillaryService">
+                <mat-header-cell *matHeaderCellDef> Ancillary Services </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.ancillaryService}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Action">
+                <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                <mat-cell *matCellDef="let element" class="action-link">
+                    <div class="icons">
+                        <mat-icon matTooltip="Change Meal Preferences" (click)="changeMeals('change',element)">restaurant_menu
+                        </mat-icon>
+                        <mat-icon matTooltip="add Ancillary Services" (click)="addServices('add',element)">add
+                        </mat-icon>
+                        <mat-icon matTooltip="In-flight shop" (click)="inflightServices('InFlight',element)">storefront
+                        </mat-icon>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <!-- <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"> -->
+        <!-- </mat-paginator> -->
+        <mat-paginator [length]="noOfPassengers" [pageSize]="10" [pageSizeOptions]="[2,3,1]" showFirstLastButtons>
+        </mat-paginator>
+    </mat-card>
+    </mat-tab>
+</mat-tab-group>

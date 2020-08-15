@@ -1,0 +1,175 @@
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Passengers">
+
+        <form [formGroup]="options" >
+            <div style="display: flex;justify-content:space-evenly">
+            <mat-form-field style="padding-left:0%;">
+                <mat-select placeholder="select Category" name="filterCategory" [formControl]="filterCategory">
+                    <mat-option *ngFor="let category of categories" [value]="category">
+                        {{category}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            
+        <mat-form-field style="padding-left:0%;">
+            <mat-select placeholder="select status" name="filterStatus" [formControl]="filterStatus">
+                <mat-option *ngFor="let c of checked" [value]="c">
+                    {{c}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div style="padding-top: 1%;">
+        <button mat-raised-button color="warn" (click)="doAction()">Apply Filter</button>
+        </div>
+    </div>
+            
+     </form>
+        <!-- <div style="display: flex;">
+            <b style="margin-right: 17px;margin-top: 17px;font-size: 15px;">Category:</b>
+        <mat-form-field>
+            <mat-select placeholder="select Category" #categoryValue (selectionChange)="changeClient($event.value)">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                    {{category}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field style="padding-left: 0%;">
+            <mat-select placeholder="select statu" #categoryValue (selectionChange)="changeChecked($event.value)">
+                <mat-option *ngFor="let c of checked" [value]="c">
+                    {{c}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div> -->
+        <!-- <mat-select>
+            <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+          </mat-select> -->
+        <!-- <div class="example-container"> -->
+            
+        <mat-card class="card">
+            <mat-table [dataSource]="dataSource">
+
+                <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+                <ng-container matColumnDef="passengerId">
+                    <mat-header-cell *matHeaderCellDef>Passenger Id</mat-header-cell>
+
+                    <mat-cell *matCellDef="let element"> {{element.passengerId}} </mat-cell>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+
+                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="age">
+                    <mat-header-cell *matHeaderCellDef> Age</mat-header-cell>
+
+                    <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="seatNo">
+                    <mat-header-cell *matHeaderCellDef> Seat No </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.seatNo}} </mat-cell>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="category">
+                    <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+                </ng-container>
+
+                <!-- <ng-container matColumnDef="ancillaryService">
+                    <mat-header-cell *matHeaderCellDef> Ancillary Services </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.ancillaryService}} </mat-cell>
+                </ng-container> -->
+
+                <ng-container matColumnDef="gender">
+                    <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Checked-In">
+                    <mat-header-cell *matHeaderCellDef> Checked-In Status </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <div *ngIf="element.checkinStatus">
+                         <mat-icon>done</mat-icon>
+
+                        </div>
+                        <div *ngIf="!element.checkinStatus">
+                           <mat-icon>close</mat-icon>
+                           </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Action">
+                    <mat-header-cell *matHeaderCellDef> Seat Change </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="action-link">
+                        <mat-icon matTooltip="change seat" (click)="openDialog('Update',element)">airline_seat_recline_normal</mat-icon>
+                        <!-- <a (click)="openDialog('Update',element)">Edit</a> -->
+                        <!-- <button mat-raised-button color="warn" matTooltip="Edit" (click)="openDialog('Update',element)">Edit</button> -->
+                    </mat-cell>
+                </ng-container>
+
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <!-- <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"> -->
+            <!-- </mat-paginator> -->
+            <mat-paginator [length]="noOfPassengers" [pageSize]="10" [pageSizeOptions]="[2,3,1]" showFirstLastButtons>
+            </mat-paginator>
+            <!-- </div> -->
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Seat Layout">
+        <mat-card class="colourcode"> 
+            <div class="green-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Checked-In + Normal</div>
+            <div class="red-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Checked-In + Wheel-Chair</div>
+            <div class="pink-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Checked-In + Infant</div>
+            <div class="mixed-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Checked-In + Infant + wheel Chair</div>
+            <div class="grey-one"></div>
+            <div style="margin-left:  3px; margin-top :-3px;">Not Checked-In</div>
+        </mat-card>
+        <!-- <mat-card class="card-seat">
+            <div class="grid">
+                <mat-grid-list cols="5" rowHeight="30px" gutterSize="70px">
+                    <mat-grid-tile *ngFor="let p of passengers;let i = index" [colspan]=1 [rowspan]=1
+                        [style.background]="p.colour" (click)="onSeatClicked(i)">
+                        {{p.seatNo}}
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </mat-card> -->
+        <div class="plane">
+
+            <div class="exit exit--front fuselage">
+          
+            </div>
+            <ol class="cabin fuselage">
+              <li *ngFor="let seats of rows" class="row row--1">
+                <ol class="seats" type="A">
+                  <li *ngFor="let seat of seats" class="seat" [ngClass]="{wheelChair:isWheelChair(seat),infant:isInfant(seat),normal:isNormal(seat),extra:isExtra(seat)}">
+                    <input (click)="seatAction(seat)" type="checkbox" [checked]="seatsLayout?.booked?.includes(seat)" [id]="seat" />
+                    <label [for]="seat">{{seat}}</label>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+            <div class="exit exit--back fuselage">
+          
+            </div>
+          </div>
+          
+          
+    </mat-tab>
+</mat-tab-group>

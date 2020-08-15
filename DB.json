@@ -1,0 +1,353 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "userName": "admin",
+      "password": "admin",
+      "role": {
+        "roleId": 1,
+        "roleName": "admin"
+      }
+    },
+    {
+      "id": 2,
+      "userName": "user",
+      "password": "user",
+      "role": {
+        "roleId": 2,
+        "roleName": "user"
+      }
+    }
+  ],
+  "passengers": [
+    {
+      "name": "yash",
+      "id": 1,
+      "seatNo": 10
+    },
+    {
+      "id": 2,
+      "name": "akash",
+      "seatno": 11
+    }
+  ],
+  "flights": [
+    {
+      "id": 1,
+      "flightId": 1,
+      "flightName": "Air India",
+      "onlineShopitems": "wallet,belt,Shirt,phone",
+      "foodItems": "Mushroom,Sausage",
+      "departurePlace": "Bangalore",
+      "arrivalPlace": "Bbsr",
+      "departureTime": "9:00 A.M",
+      "arrivalTime": "12:00 P.M",
+      "flightAncillaryService": "extra baggage,air conditioning,special service,xyz,abc,qwerty",
+      "passengers": [
+        {
+          "passengerId": 1,
+          "checkinStatus": true,
+          "name": "yash rathod",
+          "age": 23,
+          "category": "normal",
+          "dob": "2020-08-18T18:30:00.000Z",
+          "ancillaryService": [
+            "air conditioning",
+            "special service",
+            "xyz"
+          ],
+          "gender": "male",
+          "colour": "green",
+          "inflightshop": [
+            "wallet",
+            "belt",
+            "Shirt"
+          ],
+          "action": "add",
+          "passport": "123456789",
+          "address": "ab",
+          "mealsList": [
+            "Mushroom"
+          ],
+          "seatNo": "2C"
+        },
+        {
+          "passengerId": 2,
+          "name": "Akash",
+          "age": 23,
+          "seatNo": "1E",
+          "checkinStatus": false,
+          "dob": "2020-08-14T18:30:00.000Z",
+          "category": "wheel chair",
+          "ancillaryService": [
+            "extra baggage"
+          ],
+          "gender": "male",
+          "colour": "red",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": [
+            "Mushroom"
+          ]
+        },
+        {
+          "passengerId": 3,
+          "name": "keshav",
+          "age": 23,
+          "seatNo": "1C",
+          "checkinStatus": false,
+          "dob": null,
+          "category": "normal",
+          "ancillaryService": [
+            "air conditioning",
+            "special service"
+          ],
+          "gender": "male",
+          "colour": "green",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "12345678",
+          "address": "12",
+          "mealsList": []
+        },
+        {
+          "passengerId": 4,
+          "name": "vibha",
+          "age": 23,
+          "seatNo": "4D",
+          "checkinStatus": true,
+          "dob": null,
+          "category": "infant",
+          "ancillaryService": [],
+          "gender": "female",
+          "colour": "pink",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": []
+        },
+        {
+          "passengerId": 5,
+          "name": "dipanshikha",
+          "age": 23,
+          "seatNo": "4E",
+          "checkinStatus": true,
+          "dob": null,
+          "category": "infant + wheel chair",
+          "ancillaryService": [],
+          "gender": "female",
+          "colour": "green",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": [
+            "Mushroom"
+          ]
+        },
+        {
+          "passengerId": 6,
+          "name": "rashmi",
+          "age": 23,
+          "seatNo": "3E",
+          "checkinStatus": true,
+          "dob": null,
+          "category": "infant",
+          "ancillaryService": [],
+          "gender": "female",
+          "colour": "pink",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": [
+            "Mushroom",
+            "Sausage"
+          ]
+        },
+        {
+          "passengerId": 7,
+          "name": "ipsita",
+          "age": 23,
+          "seatNo": "3B",
+          "checkinStatus": true,
+          "dob": null,
+          "category": "wheel chair",
+          "ancillaryService": [],
+          "gender": "female",
+          "colour": "red",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": []
+        },
+        {
+          "passengerId": 8,
+          "name": "shukla ji",
+          "age": 23,
+          "seatNo": "2E",
+          "checkinStatus": true,
+          "dob": null,
+          "category": "normal",
+          "ancillaryService": [],
+          "gender": "male",
+          "colour": "grey",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": []
+        },
+        {
+          "passengerId": 9,
+          "name": "ram sai",
+          "age": 23,
+          "checkinStatus": false,
+          "seatNo": "2A",
+          "dob": null,
+          "category": "normal",
+          "ancillaryService": [],
+          "gender": "male",
+          "colour": "green",
+          "inflightshop": false,
+          "action": "change",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": []
+        },
+        {
+          "passengerId": 10,
+          "name": "sameera",
+          "age": 23,
+          "seatNo": "2B",
+          "checkinStatus": true,
+          "dob": null,
+          "category": "wheel chair",
+          "ancillaryService": [],
+          "gender": "male",
+          "colour": "red",
+          "inflightshop": false,
+          "action": "add",
+          "passport": "123456789",
+          "address": "xyz",
+          "mealsList": []
+        },
+        {
+          "name": "yas",
+          "age": "12",
+          "category": "infant + wheel chair",
+          "ancillaryService": null,
+          "gender": "Male",
+          "passport": null,
+          "address": null,
+          "inflightshop": null,
+          "mealsList": [
+            "Mushroom"
+          ],
+          "checkinStatus": true,
+          "dob": null,
+          "passengerId": 11,
+          "seatNo": "1A",
+          "action": "change"
+        },
+        {
+          "name": "ram sai ",
+          "age": "56",
+          "category": "infant + wheel chair",
+          "ancillaryService": [
+            "abc"
+          ],
+          "gender": "Female",
+          "passport": null,
+          "address": null,
+          "inflightshop": [
+            "wallet"
+          ],
+          "mealsList": [
+            "Mushroom"
+          ],
+          "checkinStatus": true,
+          "dob": null,
+          "passengerId": 12,
+          "seatNo": "1F",
+          "action": "InFlight"
+        },
+        {
+          "name": "rs",
+          "age": "12",
+          "category": "infant",
+          "ancillaryService": null,
+          "gender": "Male",
+          "passport": "1234567",
+          "address": null,
+          "inflightshop": null,
+          "mealsList": [
+            "Mushroom"
+          ],
+          "checkinStatus": false,
+          "dob": null,
+          "colour": "pink",
+          "passengerId": 13,
+          "seatNo": "1D",
+          "action": "change"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "flightId": 2,
+      "flightName": "Air Asia",
+      "onlineShopitems": [],
+      "foodItems": [],
+      "departurePlace": "Bangalore",
+      "arrivalPlace": "Bbsr",
+      "departureTime": "10:00 A.M",
+      "arrivalTime": "1:00 P.M",
+      "flightAncillaryService": [],
+      "passengers": []
+    },
+    {
+      "id": 3,
+      "flightId": 3,
+      "flightName": "Indigo",
+      "departurePlace": "Bangalore",
+      "arrivalPlace": "Hyd",
+      "departureTime": "11:00 A.M",
+      "arrivalTime": "2:00 P.M",
+      "flightAncillaryService": [],
+      "onlineShopitems": [],
+      "foodItems": [],
+      "passengers": []
+    },
+    {
+      "id": 4,
+      "flightId": 4,
+      "flightName": "Go Airways",
+      "departurePlace": "Bangalore",
+      "arrivalPlace": "Chennai",
+      "departureTime": "5:00 P.M",
+      "arrivalTime": "7:00 P.M",
+      "flightAncillaryService": [],
+      "onlineShopitems": [],
+      "foodItems": [],
+      "passengers": []
+    },
+    {
+      "id": 5,
+      "flightId": 5,
+      "flightName": "Vistara",
+      "departurePlace": "Bangalore",
+      "arrivalPlace": "Patna",
+      "departureTime": "7:00 P.M",
+      "arrivalTime": "9:30 P.M",
+      "flightAncillaryService": [],
+      "onlineShopitems": [],
+      "foodItems": [],
+      "passengers": []
+    }
+  ]
+}

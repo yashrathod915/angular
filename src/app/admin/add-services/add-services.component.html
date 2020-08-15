@@ -1,0 +1,20 @@
+
+<div mat-dialog-content>
+    <p>Passenger Name : {{passenger.name}}</p>
+    <div class="example-container">
+      <mat-form-field>
+        <mat-select [(ngModel)]="passenger.ancillaryService" multiple>
+            <mat-option *ngFor="let topping of flightServices" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+        <!-- <input matInput color="primary" placeholder="ancillaryServices" [(ngModel)]="passenger.shoppingItem"> -->
+         
+        </mat-form-field>
+     </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="doAction()">Submit</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  </div>
+
+
+

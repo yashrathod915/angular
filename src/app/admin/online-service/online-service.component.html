@@ -1,0 +1,16 @@
+<body>
+  <div style="width: 100%;height:100%;padding-left:2%;">
+    <button mat-stroked-button color="warn">SHOP ITEMS</button><br>
+<mat-form-field  style="width: 100%;">
+  <!-- <mat-select [(ngModel)]="flight.onlineShopitems" multiple>
+      <mat-option *ngFor="let topping of foodList" [value]="topping">{{topping}}</mat-option>
+  </mat-select> -->
+  <input matInput [(ngModel)]="flight.onlineShopitems">
+  <!-- <input matInput color="primary" placeholder="ancillaryServices" [(ngModel)]="passenger.shoppingItem"> -->
+  </mat-form-field>
+<div mat-dialog-actions style="display: flex;justify-content:space-evenly">
+  <button mat-button (click)="doAction()">Submit</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
+  </div>
+</body>

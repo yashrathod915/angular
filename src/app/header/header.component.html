@@ -1,0 +1,26 @@
+<div *ngIf="header" class="header">
+    <div class="logo" style="display: flex;padding-left: 2%;padding-top:1%">
+        <mat-icon>flight</mat-icon>
+        <div class="txt"> <b>AIRLINES</b></div>
+
+        <div class="user" *ngIf="userLogin" style="display: flex;">
+            <div class="user-home" style=" margin-top:0.5px;margin-left:30px">
+                <mat-icon matTooltip="Home" (click)="userHome()">home</mat-icon>
+            </div>
+            <div class="Undo" *ngIf="checkInFlightDetails" style=" margin-top:0.5px;margin-left:30px">
+                <mat-icon (click)="undo()">undo</mat-icon>
+            </div>
+            <div class="Undo" *ngIf="inflightMealLayout" style=" margin-top:0.5px;margin-left:30px">
+                <mat-icon (click)="undoMeal()">undo</mat-icon>
+            </div>
+        </div>
+        <div class="admin" *ngIf="adminLogin" style="display: flex;">
+            <div class="admin-home" style=" margin-top:0.5px;margin-left:30px">
+                <mat-icon matTooltip="Home" (click)="adminHome()">home</mat-icon>
+            </div>
+        </div>
+        <div class="logout-button">
+            <mat-icon matTooltip="log-out" (click)="logout()">logout</mat-icon>
+        </div>
+    </div>
+</div>

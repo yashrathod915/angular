@@ -1,0 +1,54 @@
+.grid{
+    width: 50%;
+    padding-left: 20%;
+    height: 40%;
+}
+.card{
+    margin: 10px;
+    /* display: flex; */
+    justify-content:center;
+    padding: 30px;
+    transition: box-shadow 0.5s ease;
+}
+.card-seat{
+    margin: 10px;
+    /* display: flex; */
+    /* flex-wrap: wrap;
+    justify-content:center; */
+
+    padding: 30px;
+    transition: box-shadow 0.5s ease;
+    /* height : 40% */
+}
+.colourcode{
+    display: flex;
+    margin: 10px;
+}
+.red-one{
+    background-color:red;
+    width: 2px;
+    height: 2px;
+    padding: 5px;
+    margin-left: 80px;
+}
+.green-one{
+    background-color: green;
+    width: 2px;
+    height: 2px;
+    padding: 5px;
+    margin-left: 150px;
+}
+.pink-one{
+    background-color:pink;
+    width: 2px;
+    height: 2px;
+    padding: 5px;
+    margin-left: 80px;
+}
+.grey-one{
+    background-color:grey;
+    width: 2px;
+    height: 2px;
+    padding: 5px;
+    margin-left: 80px;
+}

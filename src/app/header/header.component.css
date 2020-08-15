@@ -1,0 +1,28 @@
+.header{
+    background-color: rgb(231, 200, 157);
+    height: 8%;
+    /* display: flex;  
+    flex-wrap: wrap; */
+}
+.txt{
+    padding-left: 1%;
+    padding-top: 0.3%;
+    font-size:27px;
+    font-stretch: expanded;
+}
+/* .user-home{
+    padding-left: 110%;
+    padding-top: 0.3%;
+} */
+.mat-icon {
+    font-size: 30px;
+  }
+.logout-button{
+    width: 100%;
+    /* margin-top: 0.2%; */
+    /* border: 2px solid black; */
+    margin-left: 75%;
+    flex-wrap: wrap;
+  }
+
+  /* style="margin-left:80px;display: contents; flex-wrap: wrap" */

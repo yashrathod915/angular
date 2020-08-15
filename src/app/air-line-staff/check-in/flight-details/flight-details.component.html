@@ -1,0 +1,62 @@
+<ng-http-loader></ng-http-loader>
+<header>
+<mat-card class="example-card">
+    <h4>
+        Upcoming Flights are ...
+    </h4>
+</mat-card>
+</header>
+<body>
+<mat-card class="card">
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="flightId">
+            <mat-header-cell *matHeaderCellDef> Flight Id</mat-header-cell>
+
+            <mat-cell *matCellDef="let element"> {{element.flightId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="flightName">
+            <mat-header-cell *matHeaderCellDef> Flight Name</mat-header-cell>
+
+            <mat-cell *matCellDef="let element"> {{element.flightName}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="departurePlace">
+            <mat-header-cell *matHeaderCellDef> Depature Place </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.departurePlace}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="arrivalPlace">
+            <mat-header-cell *matHeaderCellDef> Arrival Place </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.arrivalPlace}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="departureTime">
+            <mat-header-cell *matHeaderCellDef> Departure Time </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.departureTime}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="arrivalTime">
+            <mat-header-cell *matHeaderCellDef> Arrival Time </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.arrivalTime}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row (click)="getRecord(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+</mat-card>
+<span class="blinking" style="display:block;
+color:royalblue;
+float:center;
+margin:10px 10px 0 0;
+padding-left:35%;"><h2>*Click on particular flight for flight details.</h2></span>
+</body>
+
+
+<!-- [routerLink]="['flight-passenger',row.flightId]" -->

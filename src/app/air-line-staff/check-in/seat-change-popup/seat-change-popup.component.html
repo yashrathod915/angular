@@ -1,0 +1,16 @@
+<!-- <h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1> -->
+<div mat-dialog-content>
+   
+    <mat-form-field >
+      <mat-label>Select Seat</mat-label>
+       <mat-select  [formControl]="seatNo" placeholder="seat no" >
+              <mat-option *ngFor="let s of seats" [value]="s" >
+                     {{s}}
+               </mat-option>
+        </mat-select>
+  </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="doAction()">Assign</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  </div>

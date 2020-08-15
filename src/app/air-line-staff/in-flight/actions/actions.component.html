@@ -1,0 +1,17 @@
+
+  <div style="width: 100%;height:100%;padding-left:2%;">
+    <button mat-stroked-button color="warn">Choose Services</button><br>
+  
+    <mat-form-field style="width: 100%;">
+      <mat-select [(ngModel)]="passenger.ancillaryService" multiple style="padding-top: 5%;">
+          <mat-option *ngFor="let topping of servicesList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+      <!-- <input matInput color="primary" placeholder="ancillaryServices" [(ngModel)]="passenger.shoppingItem"> -->
+      </mat-form-field>
+  
+
+<div mat-dialog-actions style="display: flex;justify-content:space-evenly;padding-top:10%;">
+  <button mat-button (click)="doAction()">Submit</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
+

@@ -1,0 +1,97 @@
+<!-- <div class="main">
+   
+    <div class="login-header"  style="display: flex;">
+        <div class="icon">
+        <mat-icon>flight</mat-icon>
+        </div>
+        <h1 class="header">AIRLINES</h1>
+    </div>
+    <div class="container-fluid log-in">
+
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()" novalidate>
+            <div class="form-group">
+                <mat-form-field style="width: 80%" appearance="outline">
+                    <input matInput placeholder="userName" formControlName="userName">
+                    <mat-error *ngIf="fval.userName.errors">Enter Valid User Name </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field style="width:80%" appearance="outline">
+
+                    <input matInput placeholder="password" formControlName="password">
+
+                    <mat-error *ngIf="fval.password.errors">Enter Valid Password </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="login-button" style="padding-left:120px;">
+                <button mat-flat-button color="primary" [disabled]="loading"><mat-icon>power_settings_new</mat-icon>
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                </button>
+               
+            </div>
+        </form>
+        <div style=" display: flex; justify-content: center; flex-direction: column;"> -->
+            <!-- <button class="btn btn" href="/users/googleauth" role="button" (click)="socialUser()"
+          style="text-transform:none;">
+          <img width="20px" style="margin-bottom:3px; margin-right:5px;" alt="Google sign-in"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+          Login with Google
+        </button> -->
+            <!-- <button mat-button style="padding: 1rem;" (click)="socialUser()">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                <mat-icon style="width: 50px; height:30px" svgIcon="logo"></mat-icon> Login With Google
+            </button>
+        </div>
+    </div>
+</div> -->
+
+<body>
+<div class="container">
+    <div class="img">
+        <img src="../../../assets/undraw_airport_2581.svg" alt="airport">
+    </div>
+    <div class="login-content">
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <img src="../../../assets/avatar.svg" alt="avatar">
+            <h2 class="title">Welcome</h2>
+            <div class="form-group">
+                <mat-form-field style="width: 100%" appearance="outline">
+                    <mat-label>User Id</mat-label>
+                    <input matInput placeholder="user Id" formControlName="userName">
+
+                    <mat-icon matSuffix>face</mat-icon>
+
+                    <mat-error *ngIf="fval.userName.errors">Enter Valid User Name </mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="form-group">
+                <mat-form-field style="width: 100%" appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="password"
+                    formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+
+
+                    <mat-error *ngIf="fval.password.errors">Enter Valid Password </mat-error>
+                </mat-form-field>
+            </div>
+            <button mat-flat-button color="accent" class="btn" type="submit" [disabled]="loading">Login
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            </button>
+            <div>
+                <button mat-button style="padding: 1rem;" (click)="socialUser()">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <mat-icon style="width: 50px; height:30px" svgIcon="logo"></mat-icon> Login With Google
+                </button>
+            </div>
+        </form>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,95 @@
+<div mat-dialog-content>
+    <div class="example-container">
+        <form [formGroup]="options" >
+            <mat-form-field>
+                <input matInput type="text" placeholder="Name" formControlName="passengername" required>
+              </mat-form-field>
+            <br>
+              <mat-form-field>
+                <input matInput type="text" placeholder="age" formControlName="age" required>
+              </mat-form-field>
+              <br>
+
+        
+
+              <mat-form-field fxFlex>
+                <mat-label>Category</mat-label>
+                 <mat-select formControlName="category" placeholder="Category" required>
+                        <mat-option *ngFor="let c of categories" [value]="c">
+                               {{c}}
+                         </mat-option>
+                  </mat-select>
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field >
+              <mat-label>Select Seat</mat-label>
+               <mat-select  formControlName="seatNo" placeholder="seat no" required>
+                      <mat-option *ngFor="let s of remainingSeatList" [value]="s" >
+                             {{s}}
+                       </mat-option>
+                </mat-select>
+          </mat-form-field>
+          <br>
+          <mat-form-field fxFlex>
+              <mat-label>Gender</mat-label>
+               <mat-select formControlName="gender" placeholder="Gender" required>
+                      <mat-option *ngFor="let c of genders" [value]="c">
+                             {{c}}
+                       </mat-option>
+                </mat-select>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Date of birth" [formControl]="dob">
+             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                 </mat-form-field>
+             <br>
+            <mat-form-field fxFlex>
+                <mat-label>Ancillary Services</mat-label>
+                 <mat-select formControlName="ancillaryService" placeholder="services" multiple>
+                        <mat-option *ngFor="let s of services" [value]="s">
+                               {{s}}
+                         </mat-option>
+                  </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field fxFlex>
+              <mat-label> Food Items</mat-label>
+               <mat-select formControlName="foodItemForm" placeholder="food items" multiple>
+                      <mat-option *ngFor="let s of foodItem" [value]="s">
+                             {{s}}
+                       </mat-option>
+                </mat-select>
+          </mat-form-field>
+          <br>
+          <mat-form-field fxFlex>
+            <mat-label> Online Shop Items</mat-label>
+             <mat-select formControlName="storeItemForm" placeholder="shop items" multiple>
+                    <mat-option *ngFor="let s of shopItem" [value]="s">
+                           {{s}}
+                     </mat-option>
+              </mat-select>
+        </mat-form-field>
+        <br>
+         
+        
+            <mat-form-field>
+                <input matInput type="text" placeholder="Passport No" formControlName="passport">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput type="text" placeholder="Address" formControlName="address">
+              </mat-form-field>
+              
+         
+ 
+        </form>
+     </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="doAction()" [disabled]="!options.valid">Submit</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  </div>

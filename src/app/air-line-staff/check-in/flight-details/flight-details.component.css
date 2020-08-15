@@ -1,0 +1,24 @@
+.card{
+    margin: 10px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    padding: 30px;
+    transition: box-shadow 0.5s ease;
+  }
+  
+  /* .card:hover{
+    box-shadow: 0 0 10px black;
+  } */
+  .example-card {
+    margin: 15px;
+}
+.blinking{
+  animation:blinkingText 1.8s infinite;
+}
+@keyframes blinkingText{
+  0%{     color: royalblue;    }
+  49%{    color: royalblue; }
+  60%{    color: transparent; }
+  99%{    color:transparent;  }
+  100%{   color: royalblue;    }
+}
